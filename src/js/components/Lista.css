@@ -1,0 +1,22 @@
+
+body{
+    background-color: #FFFFFF;
+}
+.card {
+    margin: auto;
+    margin-top: 200px;
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    background-color: rgb(215, 203, 176);
+}
+.card-tittle {
+    font-size: 50px;
+}
+.list-group-item {
+    background-color: #e9e3e8;
+}
+.btn {
+    padding-right: 50px;
+}
