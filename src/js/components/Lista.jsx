@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Lista.css"
 //create your first component
 const Lista = () => {
@@ -13,6 +13,28 @@ const Lista = () => {
         setTodos([...todos, { id: Date.now(), text: newTodo }])
         setNewTodo('')
     };
+    const createUser = () => {
+        fetch('https://playground.4geeks.com/todo/users/fabrigasman', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify()
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            console.log('Respuesta del servidor:', data);
+        })
+        .catch(error => {
+            console.error('Hubo un error:', error);
+        });
+        
+    }
+    useEffect(()=>{
+        createUser()
+    },[])
     const deleteTodo = (id) => {
         setTodos(todos.filter(todo => todo.id !== id));
     }
